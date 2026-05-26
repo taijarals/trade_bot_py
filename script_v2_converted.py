@@ -12,7 +12,7 @@ import pandas as pd
 import requests
 import seaborn as sns
 from dotenv import load_dotenv
-from google.colab import userdata  # Mantenha se for rodar no Colab, ou mude para os.environ se for local
+#from google.colab import userdata  # Mantenha se for rodar no Colab, ou mude para os.environ se for local
 from openai import OpenAI
 
 # =====================================================================
@@ -21,10 +21,10 @@ from openai import OpenAI
 
 load_dotenv()
 
-# Recuperação de chaves (ajuste para os.getenv("NOME") se rodar 100% localmente)
-OPENROUTER_KEY = userdata.get('OPENROUTER_KEY')
-FOXBIT_KEY = userdata.get('FOXBIT_KEY')
-FOXBIT_SECRET = userdata.get('FOXBIT_SECRET')
+# Recuperação de chaves diretamente do arquivo .env (rodando localmente)
+OPENROUTER_KEY = os.getenv('OPENROUTER_KEY')
+FOXBIT_KEY = os.getenv('FOXBIT_KEY')
+FOXBIT_SECRET = os.getenv('FOXBIT_SECRET')
 
 API_BASE = "https://api.foxbit.com.br"
 
